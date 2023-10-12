@@ -209,7 +209,7 @@ tersebut.
 
 # 16. Choose the correct output of the following code: -
 # not(10 != 10) and bool(10 != 10)
-# answer : No Output
+# answer : No Output / False
 
 
 # 17. Which among the following are the correct ways to delete the length attribut from the Box class
@@ -582,7 +582,7 @@ top_speed= {"audi_r8": 320, "audi_a4": 120, "audi_q5": 147}
 for (key,values) in top_speed .items():
 print(key,values,end = " ")
 # answer:
-# audi_r8 320 audi_a4 120 audi_q5 147 
+# All of the above
 
 
 
