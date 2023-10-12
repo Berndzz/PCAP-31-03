@@ -256,16 +256,132 @@ T3 = T1+T2
 print(T3) # Error
 # answer: Error (TypeError: unsupported operand type(s) for +: 'int' and 'tuple')
 
+'''
+breakdown
+ "TypeError: unsupported operand type(s) for +: 'int' and 'tuple'", terjadi karena Anda mencoba menjumlahkan dua objek dengan tipe data yang tidak dapat dijumlahkan secara langsung, yaitu integer (int) dan tuple. Mari kita jelaskan secara terperinci mengapa pesan error ini muncul.
+
+Pertama, mari kita periksa bagaimana T1 dan T2 didefinisikan:
+
+T1 adalah sebuah tuple dengan satu elemen, yaitu 1. Ini adalah contoh dari tuple dengan satu elemen.
+T2 adalah sebuah tuple dengan dua elemen, yaitu 3 dan 4.
+Kemudian, Anda mencoba menjumlahkan T1 dan T2 dalam baris kode ini:
+
+python
+Copy code
+T3 = T1 + T2
+Mari kita bahas mengapa pesan error muncul:
+Saat Anda menjumlahkan dua variabel tuple, Python akan mencoba untuk menggabungkannya. Dalam hal ini, 
+Python mencoba menggabungkan T1 dan T2.
+Namun, masalah terjadi karena T1 adalah sebuah tuple yang berisi satu elemen, yaitu integer 1, sedangkan T2 
+adalah sebuah tuple dengan dua elemen, yaitu 3 dan 4.
+Python tidak dapat secara otomatis menggabungkan tuple dengan integer karena operasi penambahan yang dijelaskan 
+dalam kode Anda adalah operasi penjumlahan matematika.
+Oleh karena itu, Python menganggap bahwa Anda mencoba menjumlahkan integer (1 dari T1) dengan tuple (T2), yang 
+tidak valid dalam hal aritmatika Python.
+Inilah sebabnya mengapa Anda mendapatkan pesan error "TypeError: unsupported operand type(s) for +: 'int' and 'tuple'" 
+yang mengindikasikan bahwa operasi penjumlahan antara tipe data int dan tuple tidak didukung.
+
+Solution
+Untuk memperbaiki kesalahan ini, Anda perlu memastikan bahwa Anda menjumlahkan objek dengan tipe data yang sesuai. 
+Jika Anda ingin menggabungkan T1 dan T2, Anda bisa menggunakan operator + untuk menggabungkan dua tuple atau mengubah 
+T1 menjadi tuple dua elemen dengan menambahkan koma setelah angka 1, sehingga T1 menjadi (1,). Berikut contoh perbaikan 
+kode:
+T1 = (1,)
+T2 = (3, 4)
+T3 = T1 + T2
+print(T3)  # Output: (1, 3, 4)
+Dengan ini, Anda dapat menjumlahkan dua tuple dengan benar dan mendapatkan hasil (1, 3, 4).
+'''
+
+# 22. Fill the blank, So that the below code prints
+# Language is: Python
+class language:
+    def __init__(self):
+        self.name = "Java"
+    def call_me(self):
+        print("Language is: ",self.name)
+obj = language()
+______________
+obj.call_me()
+# answer: 
+# setattr(obj,'name',"Python") # Language is: Python
+# obj.name = "Python" # Language is: Python
+
+'''
+breakdown
+Fungsi setattr sebenarnya hanya memiliki dua parameter. Parameter tersebut adalah:
+Objek: Ini adalah objek yang atributnya akan diubah.
+Nama Atribut: Ini adalah nama atribut yang akan diubah.
+Nilai Atribut (opsional): Ini adalah nilai baru yang akan diberikan pada atribut.
+
+'''
+
+# 23. Choose the correct output of the following code: - 
+try:
+    print("Hello")
+finally:
+    print("End of Code")
+# answer:
+# Hello
+# End of Code
 
 
+# 24. Choose the correct output of the following: - 
+x = 50
+def Calculate():
+    global x
+    x = 20
+    print("Calculation inside of a function:",x*2+5-9)
+Calculate()
+print("Calculate outside a function:", x*2+5-9)
+# answer: 
+# Calculation inside of a function: 36
+# Calculate outside a function: 36
 
+'''
+breakdown
+Variabel x didefinisikan di luar fungsi sebagai variabel global dan diatur ke nilai 50.
+Kemudian, ada fungsi yang disebut Calculate. Di dalam fungsi ini, kita mendeklarasikan bahwa 
+kita akan menggunakan variabel x yang ada di luar fungsi (variabel global) dengan menggunakan kata 
+kunci global. Ini berarti bahwa kita akan merujuk ke variabel global x dalam fungsi ini.
+Di dalam fungsi Calculate, variabel x diberi nilai baru yaitu 20.
+Selanjutnya, ada pernyataan print yang mencetak hasil perhitungan yang melibatkan variabel x. Hasil 
+perhitungan adalah x*2 + 5 - 9. Di dalam fungsi ini, nilai x adalah 20 (nilai yang diatur di dalam fungsi), 
+sehingga hasil perhitungannya adalah 36. Oleh karena itu, pesan "Calculation inside of a function: 36" akan dicetak.
+Kemudian, fungsi Calculate() dipanggil.
+Setelah pemanggilan fungsi, kita mencetak hasil perhitungan yang melibatkan variabel x lagi di luar fungsi. 
+Karena kita menggunakan variabel global x, nilai yang digunakan adalah yang telah diubah di dalam fungsi, yaitu 20.
+Hasil perhitungan tetap sama, yaitu x*2 + 5 - 9, yang menghasilkan 36. Oleh karena itu, pesan "Calculate outside a 
+function: 36" akan dicetak.
+Jadi, meskipun kita mengubah nilai variabel x di dalam fungsi, karena kita menggunakan variabel global x 
+dengan kata kunci global, perubahan tersebut berlaku di seluruh program, dan nilai x yang diubah akan digunakan 
+baik di dalam maupun di luar fungsi.
 
+'''
 
+# 25. Choose the correct output of the following code: - 
+i = 6
+while True:
+    if i%0O14 == 0:
+        break
+    i += 1
+print(i)
+# answer: 12
+'''
+breakdown
+Misalkan kita memiliki bilangan oktal 014 (berdasarkan notasi oktal).
 
-
-
-
-
+Tulis bilangan oktal: 014
+Tentukan nilai desimal dari setiap digit oktal:
+Digit kanan: 4 (di posisi 0)
+Digit kiri: 1 (di posisi 1)
+Hitung nilai desimalnya:
+Nilai desimal dari digit kanan adalah 4 * 8^0 = 4 * 1 = 4.
+Nilai desimal dari digit kiri adalah 1 * 8^1 = 1 * 8 = 8.
+Jumlahkan nilai desimal dari kedua digit: 4 + 8 = 12.
+Jadi, bilangan oktal 014 setara dengan bilangan desimal 12. 
+Dalam notasi desimal, bilangan tersebut adalah 12.
+'''
 
 
 
