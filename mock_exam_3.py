@@ -249,11 +249,11 @@ sets = {0, 0, 1, 4, 6}
 print(sets)
 # answer: {0, 1, 4, 6}
 
-# 21. Choose the correct output of the following code: - 
+# 21. Choose the correct output of the following code: -
 T1 = (1)
-T2 = (3,4)
+T2 = (3, 4)
 T3 = T1+T2
-print(T3) # Error
+print(T3)  # Error
 # answer: Error (TypeError: unsupported operand type(s) for +: 'int' and 'tuple')
 
 '''
@@ -295,15 +295,20 @@ Dengan ini, Anda dapat menjumlahkan dua tuple dengan benar dan mendapatkan hasil
 
 # 22. Fill the blank, So that the below code prints
 # Language is: Python
+
+
 class language:
     def __init__(self):
         self.name = "Java"
+
     def call_me(self):
-        print("Language is: ",self.name)
+        print("Language is: ", self.name)
+
+
 obj = language()
 ______________
 obj.call_me()
-# answer: 
+# answer:
 # setattr(obj,'name',"Python") # Language is: Python
 # obj.name = "Python" # Language is: Python
 
@@ -316,7 +321,7 @@ Nilai Atribut (opsional): Ini adalah nilai baru yang akan diberikan pada atribut
 
 '''
 
-# 23. Choose the correct output of the following code: - 
+# 23. Choose the correct output of the following code: -
 try:
     print("Hello")
 finally:
@@ -326,15 +331,19 @@ finally:
 # End of Code
 
 
-# 24. Choose the correct output of the following: - 
+# 24. Choose the correct output of the following: -
 x = 50
+
+
 def Calculate():
     global x
     x = 20
-    print("Calculation inside of a function:",x*2+5-9)
+    print("Calculation inside of a function:", x*2+5-9)
+
+
 Calculate()
 print("Calculate outside a function:", x*2+5-9)
-# answer: 
+# answer:
 # Calculation inside of a function: 36
 # Calculate outside a function: 36
 
@@ -359,10 +368,10 @@ baik di dalam maupun di luar fungsi.
 
 '''
 
-# 25. Choose the correct output of the following code: - 
+# 25. Choose the correct output of the following code: -
 i = 6
 while True:
-    if i%0O14 == 0:
+    if i % 0O14 == 0:
         break
     i += 1
 print(i)
@@ -397,7 +406,7 @@ Jadi, bilangan oktal 014 setara dengan bilangan desimal 12.
 Dalam notasi desimal, bilangan tersebut adalah 12.
 '''
 
-# 26. Which among the following operator have the highest precedence? 
+# 26. Which among the following operator have the highest precedence?
 # answer: **
 
 '''
@@ -409,18 +418,26 @@ operasi dengan prioritas lebih tinggi akan dievaluasi terlebih dahulu daripada o
 lebih rendah.
 '''
 
-# 27. Choose the correct output of the following code: - 
+# 27. Choose the correct output of the following code: -
+
+
 class Parent:
-    def __init__(self,age):
-        self.age =age 
+    def __init__(self, age):
+        self.age = age
+
     def get_parent_age(self):
         return self.age
+
+
 class Child(Parent):
     def __init__(self):
         super().__init__(55)
         self.age = super().get_parent_age() - 25
+
     def get_child_age(self):
         return self.age
+
+
 obj = Child()
 print("Child age is: ", obj.get_child_age())
 print("Parent age is: ", obj.get_parent_age())
@@ -453,14 +470,18 @@ dari Parent, keduanya memiliki nilai yang sama.
 '''
 
 
-# 28. Choose the correct output of the following code: - 
+# 28. Choose the correct output of the following code: -
 class A:
     def __init__(self):
         print(type(self))
+
+
 class B(A):
     def __init__(self):
         super().__init__()
         print(type(self))
+
+
 B()
 # answer :
 # <class '__main__.B'>
@@ -492,9 +513,9 @@ kelas anak dan merujuk pada tipe kelas anak, kecuali Anda secara eksplisit menga
 dari kelas induk.
 '''
 
-# 29. Choose the correct output of the following code: - 
-a  = '62' + '14'
-print(a,type(a))
+# 29. Choose the correct output of the following code: -
+a = '62' + '14'
+print(a, type(a))
 
 # answer:
 # 6214 <class 'str'>
@@ -505,10 +526,11 @@ class language:
     def __init__(self):
         self.name = "Java"
         print(self.name)
-        
+
 # answer:
 # language().__init__()
 # language.__init__(language())
+
 
 '''
 breakdown
@@ -530,9 +552,18 @@ Anda membuat objek dari kelas.
 
 
 # 31. Choose the correct output of the below code: -
-class A: pass
-class B(A): pass
-class C(B,A) : pass
+class A:
+    pass
+
+
+class B(A):
+    pass
+
+
+class C(B, A):
+    pass
+
+
 print(A.__bases__)
 print(B.__bases__)
 print(C.__bases__)
@@ -574,20 +605,19 @@ Child.__bases__ untuk melihat bahwa kelas dasar dari Child adalah Parent.
 
 '''
 
-# 32. Choose the correct statement: - 
+# 32. Choose the correct statement: -
 
 
 # 33. What is the output of the following program, when the below code is executed in python version 3.6?
-top_speed= {"audi_r8": 320, "audi_a4": 120, "audi_q5": 147}
-for (key,values) in top_speed .items():
-print(key,values,end = " ")
+top_speed = {"audi_r8": 320, "audi_a4": 120, "audi_q5": 147}
+for (key, values) in top_speed .items():
+    print(key, values, end=" ")
 # answer:
 # All of the above
 
 
-
-# 34. Choose the correct output of the following code: - 
-speed = {320,120,200,100}
+# 34. Choose the correct output of the following code: -
+speed = {320, 120, 200, 100}
 print(speed)
 # answer:
 # {320, 100, 120, 200}
@@ -611,10 +641,14 @@ himpunan {320, 120, 200, 100}.
 class Parent:
     def __init__(self):
         self.a = 2
+
+
 class Child(Parent):
     def __init__(self):
         super().__init__()
         self.b = 3
+
+
 obj = Child()
 print(obj.a, obj.b)
 # answer:
@@ -622,30 +656,33 @@ print(obj.a, obj.b)
 #  Parent.__init__(self)
 
 
-# 36. Choose tge correct output of the following code:  - 
-import math 
-print("Output : ", math.ceil(5.45)) # ceil itu pembulatan ke atas klo floor yg pembulatan ke bawah
+# 36. Choose tge correct output of the following code:  -
+# ceil itu pembulatan ke atas klo floor yg pembulatan ke bawah
+print("Output : ", math.ceil(5.45))
 # answer:
 # Output :  6
 
 
-# 37. Choose the correct output of the following code: - 
+# 37. Choose the correct output of the following code: -
 print(math.factorial(4.5))
 # answer:
 # ValueError: factorial() only accepts integral values
 
 
-# 38. What is the correct output of the following code: - 
-class Add: 
-    def __init__(self,x,y):
-        self.num1 = x 
+# 38. What is the correct output of the following code: -
+class Add:
+    def __init__(self, x, y):
+        self.num1 = x
         self.num2 = y
+
     def __str__(self):
         return self.num1 + self.num2
-obj = Add(3,4)
+
+
+obj = Add(3, 4)
 print(obj)
 # answer:
-# Error 
+# Error
 
 '''
 breakdown
@@ -676,14 +713,17 @@ print(obj)
 # answer: As many except block as we want.
 
 
-# 40. Choose the correct output of the following code: - 
-class Student: 
+# 40. Choose the correct output of the following code: -
+class Student:
     Class = 0
-    def __init__(self,x,y,z):
+
+    def __init__(self, x, y, z):
         self.name = x
         self.roll_name = y
         Student.Class = z
-obj = Student("Mia",4578,10)
+
+
+obj = Student("Mia", 4578, 10)
 print(obj.__dict___)
 # answer:
 # {'name': 'Mia', 'roll_name': 4578}
@@ -714,64 +754,3 @@ Dengan demikian, Anda akan dapat menampilkan nilai dari atribut kelas Class yang
 saat Anda membuat objek.
 Jika Anda ingin melihat atribut kelas yang ada dalam kelas Student, Anda bisa mencetak Student.__dict__.
 '''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
