@@ -586,6 +586,189 @@ print(key,values,end = " ")
 
 
 
+# 34. Choose the correct output of the following code: - 
+speed = {320,120,200,100}
+print(speed)
+# answer:
+# {320, 100, 120, 200}
+
+'''
+breakdown
+Anda sebenarnya membuat sebuah himpunan (set) dalam Python. Himpunan adalah koleksi elemen yang 
+bersifat unik dan tidak berurutan. Dalam hal ini, Anda membuat himpunan yang berisi 
+empat elemen: 320, 120, 200, dan 100. Namun, himpunan tidak menjamin urutan tertentu saat Anda mencetaknya.
+Sebagai akibatnya, ketika Anda mencetak himpunan speed, urutan elemennya tidak dapat 
+diprediksi dan bisa muncul dalam urutan yang berbeda-beda setiap kali program dijalankan. 
+Hasil cetaknya mungkin mirip dengan yang Anda sebutkan dalam jawaban (yaitu {320, 100, 120, 200}), 
+tetapi urutan elemen dalam himpunan tidak memiliki arti khusus.
+Sebagai contoh, hasil cetakan yang berbeda mungkin adalah {320, 120, 200, 100} atau bahkan 
+urutan yang sepenuhnya berbeda, tetapi itu semua adalah representasi yang valid dari 
+himpunan {320, 120, 200, 100}.
+'''
+
+
+# 35. Fill the blank so that the below code will print '2 3'.
+class Parent:
+    def __init__(self):
+        self.a = 2
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        self.b = 3
+obj = Child()
+print(obj.a, obj.b)
+# answer:
+#  super().__init__()
+#  Parent.__init__(self)
+
+
+# 36. Choose tge correct output of the following code:  - 
+import math 
+print("Output : ", math.ceil(5.45)) # ceil itu pembulatan ke atas klo floor yg pembulatan ke bawah
+# answer:
+# Output :  6
+
+
+# 37. Choose the correct output of the following code: - 
+print(math.factorial(4.5))
+# answer:
+# ValueError: factorial() only accepts integral values
+
+
+# 38. What is the correct output of the following code: - 
+class Add: 
+    def __init__(self,x,y):
+        self.num1 = x 
+        self.num2 = y
+    def __str__(self):
+        return self.num1 + self.num2
+obj = Add(3,4)
+print(obj)
+# answer:
+# Error 
+
+'''
+breakdown
+Kode yang Anda berikan mencoba mendefinisikan sebuah kelas Add yang memiliki konstruktor (__init__)
+untuk menginisialisasi dua atribut, num1 dan num2, serta metode __str__ yang mencoba mengembalikan 
+hasil penjumlahan num1 dan num2. Kemudian, Anda mencoba membuat objek dari kelas Add dan mencetak objek 
+tersebut. Namun, ada sebuah masalah dalam kode ini, yang akan menghasilkan error.
+Masalahnya adalah dalam metode __str__. Metode __str__ seharusnya mengembalikan string (tipe data str),
+tetapi Anda mengembalikan hasil penjumlahan num1 dan num2, yang akan menghasilkan tipe data int. Ini 
+adalah konflik tipe data yang menyebabkan kesalahan.
+
+solution
+class Add: 
+    def __init__(self, x, y):
+        self.num1 = x 
+        self.num2 = y
+
+    def __str__(self):
+        return str(self.num1 + self.num2) # tambah str() agar int diubah ke string
+
+obj = Add(3, 4)
+print(obj)
+'''
+
+
+# 39. How many except statements can we put below the try block?
+# Note: -Do not consider the default except block for the calculation.
+# answer: As many except block as we want.
+
+
+# 40. Choose the correct output of the following code: - 
+class Student: 
+    Class = 0
+    def __init__(self,x,y,z):
+        self.name = x
+        self.roll_name = y
+        Student.Class = z
+obj = Student("Mia",4578,10)
+print(obj.__dict___)
+# answer:
+# {'name': 'Mia', 'roll_name': 4578}
+
+'''
+breakdown
+Kelas Student memiliki tiga atribut:
+
+Class: Ini adalah atribut kelas yang diinisialisasi dengan nilai 0.
+name: Ini adalah atribut instance yang diinisialisasi dalam konstruktor dengan nilai x.
+roll_number: Ini adalah atribut instance yang diinisialisasi dalam konstruktor dengan nilai y.
+Dalam konstruktor (__init__) kelas Student, Anda menginisialisasi atribut name dan roll_number 
+dengan nilai yang diberikan saat membuat objek.
+Kemudian, Anda mengatur nilai atribut kelas Class dengan nilai z. Ini akan mengubah nilai atribut 
+kelas Class menjadi 10.
+Ketika Anda mencetak obj.__dict__, Anda mendapatkan dictionary yang berisi atribut-instance dan 
+nilai-nilai yang sesuai. Dalam kasus ini, dictionary ini akan berisi {'name': 'Mia', 'roll_number': 4578}.
+
+
+kenapa z tidak di tampilkan?
+Kemungkinan besar kesalahan dalam menampilkan nilai z adalah pada pemanggilan atribut. 
+Ketika Anda mencetak obj.__dict__, itu hanya akan mencetak atribut-instance yang ada pada objek 
+obj, tetapi tidak akan mencetak atribut kelas seperti Class.
+
+solution:
+print(Student.Class)
+Dengan demikian, Anda akan dapat menampilkan nilai dari atribut kelas Class yang diubah dalam konstruktor 
+saat Anda membuat objek.
+Jika Anda ingin melihat atribut kelas yang ada dalam kelas Student, Anda bisa mencetak Student.__dict__.
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
