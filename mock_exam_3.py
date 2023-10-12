@@ -2,22 +2,20 @@ import math
 import test3
 
 # 1. Choose the correct output of the following code: -
+# class A:
+#     num = 0
+
+#     def __str__(self):
+#         A.num = A.num + 1
+#         return str(A.num)
 
 
-class A:
-    num = 0
-
-    def __str__(self):
-        A.num = A.num + 1
-        return str(A.num)
+# class B(A):
+#     def __init__(self):
+#         super().__init__()
 
 
-class B(A):
-    def __init__(self):
-        super().__init__()
-
-
-obj = A()
+# obj = A()
 # print('A(): ', obj)  # 1
 # print('A(): ', obj)  # 2
 # print('B(): ', B())  # 3
