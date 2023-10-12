@@ -249,4 +249,27 @@ sets = {0, 0, 1, 4, 6}
 print(sets)
 # answer: {0, 1, 4, 6}
 
+# 21. Choose the correct output of the following code: - 
+T1 = (1)
+T2 = (3,4)
+T3 = T1+T2
+print(T3) # Error
+# answer: Error (TypeError: unsupported operand type(s) for +: 'int' and 'tuple')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
