@@ -22,7 +22,7 @@ import test3
 # answer: 1 2 3
 
 
-# 2. Choose the correect statement from the following.A
+# 2. Choose the correct statement from the following.A
 # answer:
 
 ''' 
