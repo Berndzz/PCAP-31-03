@@ -133,17 +133,120 @@ print(__C) error
 
 
 # Consider the follwing code is written in test2.py file.
-class List1(test3.List):
-    def __init__(self):
-        super().__init__()
-        print("One: ", self._l)
-        print("Two: ", test3.List._name)
+# class List1(test3.List):
+#     def __init__(self):
+#         super().__init__()
+#         print("One: ", self._l)
+#         print("Two: ", test3.List._name)
 
 
-List1()
+# List1()
 # answer:
 # One: [1,1.0,3,2.0,5,3.0,7,4.0,9,5.0]
 # Two: List
 
 
 # 12. Choose the correct output of the following code: -
+# print(math.floor(5.45))
+# print(math.floor(-5.45))
+# answer:
+# 5
+# -6
+
+'''
+breakdown
+math.floor untuk membulatkan bilangan desimal ke bawah menjadi 
+bilangan bulat. Mari kita bahas perinciannya:
+print(math.floor(5.45)): Ini mengambil angka desimal positif 
+5.45 dan membulatkannya ke bawah menjadi bilangan bulat terdekat 
+yang lebih kecil atau sama dengan 5.45. Hasilnya adalah 5.
+print(math.floor(-5.45)): Ini mengambil angka desima l negatif 
+-5.45 dan juga membulatkannya ke bawah menjadi bilangan bulat 
+terdekat yang lebih kecil atau sama dengan -5.45. Hasilnya adalah -6.
+Hasil ini terjadi karena math.floor selalu membulatkan angka 
+desimal ke bilangan bulat yang lebih rendah (lebih kecil) dari
+angka desimal tersebut. Sebagai catatan, hasilnya selalu merupakan
+bilangan bulat, bahkan jika angka desimal yang diberikan adalah 
+bilangan bulat negatif.
+
+Bulatkan bilangan desimal ke atas
+math.ceil yang disediakan oleh modul math di Python. 
+Fungsi math.ceil akan selalu membulatkan angka desimal ke 
+bilangan bulat yang lebih besar atau sama dengan angka desimal 
+tersebut.
+
+'''
+# 13. Choose the correct output of the following code : -
+# try:
+#     print("Hello")
+# except:
+#     print("Error is Code")
+# else:
+#     print("No Error in Code")
+# finally:
+#     print("finally")
+
+# answer:
+# Hello
+# No Error Code
+# finally
+
+
+# 14. Choose the correct output of the following code: -
+# A = [[1, 4, 5, 12], [-5, 8, 9, 0], [-6, 7, 11, 19]]
+# print(A)
+# answer : [[1, 4, 5, 12], [-5, 8, 9, 0], [-6, 7, 11, 19]]
+
+# 15. If the file 'sys.txt' already contain the text "Welcome"
+# then what will be the text present in the file after the execution
+# of the following code: -
+
+# file = open('sys.txt', 'a')
+# file.write("To programing")
+# file.close()
+# answer: WelcomeTo Programming
+
+
+# 16. Choose the correct output of the following code: -
+# not(10 != 10) and bool(10 != 10)
+# answer : No Output
+
+
+# 17. Which among the following are the correct ways to delete the length attribut from the Box class
+class Box:
+    def __init__(self):
+        self.length = 3
+        self.height = 9
+        self.breadth = 5
+
+
+obj = Box()
+# answer:
+# delattr(obj, 'length')
+# or
+# del obj.length
+
+
+# 18. Which among the following can not be used to create a variable?
+# answer = in
+
+
+# 19. Choose the correct output of the following code: -
+class Car:
+    speed = 10
+
+    def BoostSpeed():
+        result = 10*Car.speed
+        return result
+
+
+# print(Car.BoostSpeed())
+# answer: 100
+
+
+# 20. Choose the correct output of the following code: -
+sets = {0, 0, 1, 4, 6}
+print(sets)
+# answer: {0, 1, 4, 6}
+
+
