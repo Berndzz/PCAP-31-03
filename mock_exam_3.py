@@ -369,6 +369,20 @@ print(i)
 # answer: 12
 '''
 breakdown
+Variabel i didefinisikan dengan nilai awal 6.
+Loop while dibuka dengan kondisi True, yang berarti loop akan terus berjalan sampai kondisi dalam loop 
+dipenuhi sehingga kita perlu menggunakan break untuk keluar dari loop.
+Di dalam loop, ada sebuah kondisi if yang memeriksa apakah sisa hasil bagi (modulus) dari i dengan 014 
+(angka oktal) sama dengan 0. Dalam notasi oktal, angka 014 adalah desimal 12.
+Kita mencoba mencari nilai i yang, jika dimodulus dengan 12 (0O14 dalam notasi oktal), hasilnya akan menjadi 0.
+Kondisi dalam if di atas akan selalu salah pada nilai i awal yang adalah 6, karena hasil dari 6 mod 12 
+bukanlah 0. Oleh karena itu, pernyataan break tidak akan dieksekusi dan program akan terus berjalan dalam loop.
+Setiap kali loop berjalan, nilai i akan ditingkatkan dengan 1 menggunakan pernyataan i += 1.
+Loop akan terus berjalan hingga i mencapai nilai 12. Pada saat itu, 12 mod 12 adalah 0, yang memenuhi kondisi dalam if. 
+Sehingga, pernyataan break dieksekusi, dan loop dihentikan.
+Setelah keluar dari loop, program mencetak nilai i. Karena i terakhir adalah 12, hasil cetakan adalah 12.
+
+How to count?
 Misalkan kita memiliki bilangan oktal 014 (berdasarkan notasi oktal).
 
 Tulis bilangan oktal: 014
@@ -382,6 +396,195 @@ Jumlahkan nilai desimal dari kedua digit: 4 + 8 = 12.
 Jadi, bilangan oktal 014 setara dengan bilangan desimal 12. 
 Dalam notasi desimal, bilangan tersebut adalah 12.
 '''
+
+# 26. Which among the following operator have the highest precedence? 
+# answer: **
+
+'''
+breakdown
+"precedence" atau prioritas adalah aturan yang menentukan urutan operasi matematika mana
+yang dievaluasi terlebih dahulu dalam sebuah ekspresi. Python mengikuti aturan urutan operasi 
+matematika yang dikenal sebagai "precedence rules" atau "rules of precedence." Dengan aturan ini, 
+operasi dengan prioritas lebih tinggi akan dievaluasi terlebih dahulu daripada operasi dengan prioritas 
+lebih rendah.
+'''
+
+# 27. Choose the correct output of the following code: - 
+class Parent:
+    def __init__(self,age):
+        self.age =age 
+    def get_parent_age(self):
+        return self.age
+class Child(Parent):
+    def __init__(self):
+        super().__init__(55)
+        self.age = super().get_parent_age() - 25
+    def get_child_age(self):
+        return self.age
+obj = Child()
+print("Child age is: ", obj.get_child_age())
+print("Parent age is: ", obj.get_parent_age())
+# answer :
+# Child age is:  30
+# Parent age is:  30
+
+'''
+breakdown
+Kelas Parent:
+
+Kelas Parent memiliki satu atribut age yang diinisialisasi melalui konstruktor __init__.
+Terdapat metode get_parent_age yang mengembalikan nilai dari atribut age.
+Kelas Child:
+Kelas Child adalah kelas anak dari kelas Parent, yang berarti Child mewarisi sifat dan metode dari Parent.
+Dalam konstruktor __init__ dari kelas Child, Anda menggunakan super().__init__(55) untuk memanggil konstruktor kelas 
+Parent dan menginisialisasi atribut age dengan nilai 55.
+Kemudian, Anda menginisialisasi atribut age lagi dengan mengambil nilai dari super().get_parent_age() (nilai 55 yang 
+diwarisi dari kelas Parent) dan mengurangkan 25 dari nilai tersebut. Jadi, self.age dalam kelas Child diatur menjadi 55 - 25,
+yaitu 30.
+Terdapat metode get_child_age yang mengembalikan nilai dari atribut age dalam kelas Child.
+Objek obj:
+Anda membuat objek obj dari kelas Child.
+Pencetakan hasil:
+Anda mencetak usia anak (Child age is: 30) dengan memanggil metode get_child_age dari objek obj. Ini menghasilkan nilai 30,
+yang sesuai dengan nilai atribut age dalam kelas Child.
+Anda juga mencetak usia orangtua (Parent age is: 30) dengan memanggil metode get_parent_age dari objek obj. Ini juga
+menghasilkan nilai 30, yang merupakan nilai dari atribut age dalam kelas Parent. Karena Child mewarisi atribut age 
+dari Parent, keduanya memiliki nilai yang sama.
+'''
+
+
+# 28. Choose the correct output of the following code: - 
+class A:
+    def __init__(self):
+        print(type(self))
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print(type(self))
+B()
+# answer :
+# <class '__main__.B'>
+# <class '__main__.B'>
+
+
+'''
+breakdown
+Keduanya merujuk ke kelas B karena objek yang diciptakan menggunakan B(), yang berarti objek tersebut 
+adalah instansi dari kelas B. Saat Anda membuat objek dengan B(), Anda sebenarnya membuat sebuah instansi 
+dari kelas B, dan objek tersebut memiliki sifat dan metode yang dimiliki oleh kelas B.
+Pada dasarnya, saat Anda membuat objek menggunakan B(), Anda membuat objek dari kelas B dan menjalankan 
+konstruktor kelas B, yang mencetak tipe objek self dalam kelas B.
+Hal ini merupakan prinsip dasar warisan atau inheritance dalam pemrograman berorientasi objek, di mana 
+kelas anak (B) mewarisi sifat dan metode dari kelas induk (A) dan memiliki kemampuan untuk mengekstend 
+atau mengubah perilaku kelas induk. Dalam hal ini, meskipun Anda memanggil super().__init__() untuk 
+menjalankan konstruktor kelas induk (A), objek yang dihasilkan tetap berada dalam kelas B dan mengacu 
+pada tipe objek kelas B.
+
+Dalam konsep warisan (inheritance), ketika Anda membuat objek dari kelas anak (subclass), objek 
+tersebut adalah instansi dari kelas anak, dan secara default, ia akan mengikuti sifat dan metode 
+yang didefinisikan dalam kelas anak. Hal ini sesuai dengan prinsip bahwa kelas anak mewarisi sifat
+dan metode dari kelas induk, tetapi kelas anak juga dapat mengganti atau menambahkan perilaku sesuai kebutuhan.
+Jika Anda ingin objek kelas anak untuk merujuk pada tipe kelas induk, Anda masih dapat melakukannya 
+dengan mengakses metode atau atribut dari kelas induk. Misalnya, dalam metode kelas anak, Anda dapat 
+mengakses metode dari kelas induk dengan menggunakan super().
+Namun, secara umum, ketika Anda membuat objek dari kelas anak, objek tersebut dianggap sebagai objek 
+kelas anak dan merujuk pada tipe kelas anak, kecuali Anda secara eksplisit mengakses sifat atau metode 
+dari kelas induk.
+'''
+
+# 29. Choose the correct output of the following code: - 
+a  = '62' + '14'
+print(a,type(a))
+
+# answer:
+# 6214 <class 'str'>
+
+
+# 30. Choose the correct ways to call the constructor explicitly.
+class language:
+    def __init__(self):
+        self.name = "Java"
+        print(self.name)
+        
+# answer:
+# language().__init__()
+# language.__init__(language())
+
+'''
+breakdown
+Dalam Python, konstruktor (metode __init__) biasanya dipanggil secara implisit ketika 
+Anda membuat objek dari suatu kelas. Namun, ada cara untuk memanggil konstruktor secara
+eksplisit jika diperlukan. Di bawah ini adalah dua cara yang benar untuk memanggil konstruktor 
+dari kelas language secara eksplisit:
+language().__init__(): Ini adalah cara yang sah untuk memanggil konstruktor kelas language secara 
+eksplisit. Dalam hal ini, Anda membuat objek dari kelas language dengan language() dan kemudian 
+memanggil konstruktor __init__ objek tersebut dengan ().__init__().
+language.__init__(language()): Dalam cara ini, Anda secara langsung memanggil metode __init__ dari 
+kelas language dengan objek language(). Ini membuat objek dari kelas language dengan language(), 
+dan kemudian Anda memanggil konstruktor __init__ dari objek tersebut dengan .__init__().
+Kedua cara di atas akan memanggil konstruktor kelas language dan menjalankan kode di dalamnya. 
+Namun, penting untuk diingat bahwa memanggil konstruktor secara eksplisit seperti ini jarang 
+dibutuhkan dalam praktek sehari-hari, dan konstruktor biasanya dipanggil secara implisit saat 
+Anda membuat objek dari kelas.
+'''
+
+
+# 31. Choose the correct output of the below code: -
+class A: pass
+class B(A): pass
+class C(B,A) : pass
+print(A.__bases__)
+print(B.__bases__)
+print(C.__bases__)
+# answer:
+# (<class 'object'>,)
+# (<class '__main__.A'>,)
+# (<class '__main__.B'>, <class '__main__.A'>
+
+'''
+breakdown
+secara terperinci:
+Kelas A:
+Kelas A adalah kelas dasar (base class) yang tidak memiliki definisi tambahan. 
+Itu hanya berisi pernyataan pass, yang menunjukkan kelas kosong.
+Kelas B:
+Kelas B adalah kelas anak (subclass) dari kelas A. Ini berarti bahwa kelas B mewarisi 
+semua sifat dan metode dari kelas A.
+Kelas C:
+Kelas C adalah kelas anak dari kelas B dan juga kelas A. Ini berarti bahwa kelas C mewarisi 
+sifat dan metode dari kedua kelas B dan A. Dalam konstruksi kelas C, B dan A disebutkan dalam 
+urutan seperti ini: class C(B, A). Urutan ini menentukan urutan pengecekan pewarisan dalam Python 
+(MRO, Method Resolution Order).
+
+Penjelasan:
+Kelas A memiliki kelas dasar yang disebut <class 'object'>. Ini karena dalam Python,
+semua kelas adalah turunan dari kelas dasar object.
+Kelas B adalah turunan dari kelas A, sehingga kelas dasar dari B adalah A.
+Kelas C adalah turunan dari kelas B dan juga kelas A. Oleh karena itu, kelas dasar 
+dari C adalah B dan A dalam urutan tersebut.
+
+Atribut __bases__ adalah atribut bawaan dalam Python yang digunakan untuk mendapatkan 
+informasi tentang kelas dasar (superclass) dari suatu kelas. Dengan atribut __bases__, 
+Anda dapat melihat kelas mana yang menjadi kelas dasar dari suatu kelas dalam hierarki pewarisan.
+Atribut __bases__ adalah bagian dari objek kelas dan digunakan untuk inspeksi hierarki pewarisan 
+kelas. Ketika Anda mengaksesnya, Anda akan mendapatkan tupel yang berisi semua kelas dasar dari 
+kelas tersebut. Setiap elemen dalam tupel adalah objek kelas yang mewakili kelas dasar.
+Misalnya, jika Anda memiliki kelas Child yang mewarisi dari kelas Parent, Anda dapat menggunakan 
+Child.__bases__ untuk melihat bahwa kelas dasar dari Child adalah Parent.
+
+'''
+
+# 32. Choose the correct statement: - 
+
+
+# 33. What is the output of the following program, when the below code is executed in python version 3.6?
+top_speed= {"audi_r8": 320, "audi_a4": 120, "audi_q5": 147}
+for (key,values) in top_speed .items():
+print(key,values,end = " ")
+# answer:
+# audi_r8 320 audi_a4 120 audi_q5 147 
+
+
 
 
 
