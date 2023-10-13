@@ -558,6 +558,156 @@ dan hasilnya bergantung pada apakah atribut tersebut ada dalam konteks yang sesu
 '''
 
 
+# 27. Choose the correct output of the following code: - 
+def calculate(x):
+    z = lambda x: return x**2  # Error here 
+print(z(x)) 
+calculate(4)
+
+# answer: Error (SyntaxError: invalid synt
+
+'''
+breakdown
+Anda mencoba mendefinisikan ekspresi lambda yang mengambil argumen x 
+dan mencoba mengembalikan nilai x**2 dengan menggunakan kata kunci return. 
+Kesalahan di sini adalah bahwa dalam ekspresi lambda, Anda tidak perlu menggunakan 
+kata kunci return. Lambda secara otomatis mengembalikan hasil dari ekspresi yang 
+ditentukan tanpa perlu kata kunci return. Oleh karena itu, Anda hanya perlu menulis:
+
+z = lambda x: x**2
+
+perbaikan code:
+def calculate(x):
+    z = lambda x: x**2
+    return z(x)
+
+result = calculate(4)
+print(result)
+
+'''
+ 
+
+# 28. Choose the correct output of the following code: - 
+T1 = (1,)
+T2 = (2,)
+T3 = (3,)
+print(T1+T2+T3)
+
+# answer: (1, 2, 3)
+
+'''
+other example:
+T1 = [1]
+T2 = [2,4]
+print(T2+T2)
+'''
+
+
+# 29. Which among the following can not be used as a variable name: - 
+# answer : 3Version
+
+
+# 30. Fill in the blank in the below code so that when it is executed it will print true.
+class Student:
+    def __init__(self):
+        self.name = "Olivia"
+    def set_rollNo(self):
+        self.rollNo = 45786
+        
+print(hasattr(Student(),'name')) # True
+print(hasattr(Student(),'rollNo')) # False
+print(hasattr(Student(),'set_rollNo')) # True
+print(hasattr(Student(),'Student')) # False
+
+# answer : 
+# print(hasattr(Student(),'name')) # True
+# print(hasattr(Student(),'set_rollNo')) # True
+
+'''
+breakdown
+Kode di atas mendefinisikan sebuah kelas Student dengan konstruktor __init__ dan 
+ebuah metode set_rollNo(). Setelah itu, kode menggunakan fungsi hasattr() untuk 
+memeriksa keberadaan atribut atau metode dalam kelas Student. Mari kita bahas hasil 
+dari masing-masing hasattr():
+print(hasattr(Student(),'name')): Ini memeriksa apakah objek yang dibuat dari kelas 
+Student memiliki atribut name. Karena dalam konstruktor (__init__) kelas Student, 
+atribut name diinisialisasi, hasilnya adalah True.
+print(hasattr(Student(),'rollNo')): Ini memeriksa apakah objek yang dibuat dari kelas 
+Student memiliki atribut rollNo. Dalam kelas Student, atribut rollNo tidak diinisialisasi 
+dalam konstruktor atau metode apapun, sehingga hasilnya adalah False.
+print(hasattr(Student(),'set_rollNo')): Ini memeriksa apakah objek yang dibuat dari kelas 
+Student memiliki metode set_rollNo(). Karena metode ini didefinisikan dalam kelas Student, 
+hasilnya adalah True.
+print(hasattr(Student(),'Student')): Ini memeriksa apakah objek yang dibuat dari kelas Student
+memiliki atribut atau metode bernama Student. Karena Student adalah nama kelas itu sendiri 
+dan bukan atribut atau metode objek, hasilnya adalah False.
+
+Tapi kan ada rollNo di class Student kenapa false?
+
+Dalam kelas Student, terdapat metode set_rollNo(), yang pada saat dijalankan akan membuat atribut rollNo di
+dalam objek yang dibuat dari kelas tersebut. Namun, perlu diingat bahwa pada saat kode dijalankan dengan 
+hasattr(Student(),'rollNo'), kelas Student sendiri belum diinisialisasi atau dibuat sebagai objek.
+Fungsi hasattr() bekerja dengan objek atau kelas yang sudah ada. Ketika Anda memeriksa hasattr(Student(),'rollNo'), 
+Anda mencoba memeriksa apakah objek dari kelas Student yang baru dibuat memiliki atribut rollNo. Pada saat itu, 
+objek belum dibuat, sehingga hasattr() mengembalikan False.
+Namun, jika Anda membuat objek dari kelas Student dan kemudian menjalankan metode set_rollNo(), atribut rollNo 
+akan dibuat dalam objek tersebut, dan Anda dapat menggunakan hasattr() untuk memeriksa apakah objek memiliki 
+atribut tersebut setelah objek dibuat:
+
+student_obj = Student()  # Membuat objek dari kelas Student
+student_obj.set_rollNo()  # Menjalankan metode untuk membuat atribut rollNo
+print(hasattr(student_obj, 'rollNo'))  # Sekarang hasilnya akan True
+
+Jadi, kesalahan dalam pemahaman kode sebelumnya adalah bahwa hasattr(Student(),'rollNo')
+mencoba memeriksa atribut rollNo pada kelas Student sebelum objek dari kelas tersebut dibuat.
+
+'''
+
+# 31. Which among the following code after execution will print 'true'
+
+
+# 32. Which among the following code after execution will print 'False' . 
+class A : pass
+class B(A): pass
+obj = A()
+print(isinstance(obj,B))
+
+
+# 33. Choose the correct output of the following code: - 
+try:
+    a = 0
+    print(a = 4)
+except:
+    print("Error is raised in try")
+# answer : Error is raised in try
+
+
+
+# 34.  If the will 'sys.txt' already contain the next "Welcome" then what 
+# will be the text present in the file after the execution of the following code: -
+
+file = open("sys.txt",'w')
+file.write("To Programming")
+file.close()
+# answer: To Programming
+
+
+# 35. If the 'sys.txt' file contains the 3 lines,
+# 1st line (Welcome)
+# 2st line (To Python)
+# 3st line (Programming)
+# Fill the blank, So that the below code will print text as it is written in the file.
+file = open('sys.txt','r')
+print(_______________)
+file.close()
+# # answer: 
+# file.read()
+# file.read(-1)
+# file.read(-10)
+
+
+
+
 
 
 
