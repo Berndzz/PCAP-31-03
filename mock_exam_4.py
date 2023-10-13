@@ -706,17 +706,63 @@ file.close()
 # file.read(-10)
 
 
+'''
+breakdown
+Pemanggilan file.read() tanpa argumen adalah cara yang paling umum untuk
+membaca seluruh konten file. Penggunaan -1 atau -10 biasanya digunakan untuk
+mengontrol jumlah karakter yang dibaca dari file, di mana -1 akan membaca 
+seluruh konten dan -10 akan membaca 10 karakter terakhir.
+'''
+
+# 36. Choose the correct output of the following code: - 
+class Class_A():
+    def info(self):
+        print("Class_A")
+class Class_B(Class_A):
+    pass
+obj = Class_B()
+obj.info()
+# answer: Class_A
 
 
+# 37. Fill the blank, so that after execution of the below code the code will print 'Please Rate This Course' . 
+class A():
+    pass
+try:
+    raise A()
+except :
+    print("Please Rate This Course")
+except:
+    print("Write Review for this Course")
+
+# answer: 
+# BaseException
+# Exception
 
 
+# 38. Choose the correc output of the following code: - 
+class Student:
+    def __init__(self,m):
+        self.__marks = m
+        grace(self)
+        print(self.__marks)
+    def grace(self):
+        self.__marks = self.__marks + 10
+Student(23)
+# answer : NameError: name 'grace' is not defined
 
 
+# 39. Choose the correct output of the following code: - 
+tp = (1,2)
+print(2*tp)
+# answer : (1, 2, 1, 2)
 
 
-
-
-
+# 40. Choose the correct output of the following code: -
+set1 = {1,2}
+set2 = {1,2}
+print(set1+set2) # Error
+# answer : TypeError: unsupported operand type(s) for +: 'set' and 'set'
 
 
 
