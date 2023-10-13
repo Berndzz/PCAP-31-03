@@ -463,52 +463,52 @@ print(a+b)
 
 # answer: 2010
 
-# 21. Choose the correct output of the following code: - 
+# 21. Choose the correct output of the following code: -
 x = 'Python Java'
 for i in x:
-    if(i==" "): print()
-    else: print(i,end="")
+    if(i == " "):
+        print()
+    else:
+        print(i, end="")
 # answer:
 # Python
 # Java
 
-# 22. Choose the correct output of the following code: - 
-for i in range(0,5):
-    for j in range(0,i+1):
+# 22. Choose the correct output of the following code: -
+for i in range(0, 5):
+    for j in range(0, i+1):
         print('* ', end="")
     print(" ")
 # answer:
-# *  
-# * *  
-# * * *  
-# * * * *  
+# *
+# * *
+# * * *
+# * * * *
 # * * * * *
 
 
-# 23. Choose the correct output of the following code: - 
+# 23. Choose the correct output of the following code: -
 a = Orange
 print(a)
 # answer:
 # NameError: name 'Orange' is not defined
 
 
-
-# 24. Choose the correct output of the following code: - 
-x = (9,5,1)
-x.append((7,5,3))
+# 24. Choose the correct output of the following code: -
+x = (9, 5, 1)
+x.append((7, 5, 3))
 length = len(x)
-print(length) # Error
+print(length)  # Error
 # answer:
 # AttributeError: 'tuple' object has no attribute 'append'
 
 
-
-# 25. Choose the correct output of the following code: - 
-try: 
+# 25. Choose the correct output of the following code: -
+try:
     print(1/0)
 except ZeroDivisionError:
     print("Zero Division Error")
-except: 
+except:
     print("Error is raised")
 else:
     print("No Error is Raised")
@@ -519,14 +519,16 @@ else:
 # 26. Fill the blank in the below code so that when its executed it will print 'true'
 class Employee:
     company_name = 'Google'
+
     def __init__(self):
         self.name = 'Enma'
 
-print(hasattr(Employee(),'company_name')) # True
-print(hasattr(Employee,'company_name')) # True
-print(hasattr(Employee(),'name')) # True
-print(hasattr(Employee,'name')) # False
-print(hasattr(Employee,'salary')) # False
+
+print(hasattr(Employee(), 'company_name'))  # True
+print(hasattr(Employee, 'company_name'))  # True
+print(hasattr(Employee(), 'name'))  # True
+print(hasattr(Employee, 'name'))  # False
+print(hasattr(Employee, 'salary'))  # False
 
 # answer:
 # print(hasattr(Employee(),'company_name')) # True
@@ -558,10 +560,10 @@ dan hasilnya bergantung pada apakah atribut tersebut ada dalam konteks yang sesu
 '''
 
 
-# 27. Choose the correct output of the following code: - 
-def calculate(x):
-    z = lambda x: return x**2  # Error here 
-print(z(x)) 
+# 27. Choose the correct output of the following code: -
+# def calculate(x):
+#     z = lambda x: return x**2  # Error here
+# print(z(x))
 calculate(4)
 
 # answer: Error (SyntaxError: invalid synt
@@ -585,9 +587,9 @@ result = calculate(4)
 print(result)
 
 '''
- 
 
-# 28. Choose the correct output of the following code: - 
+
+# 28. Choose the correct output of the following code: -
 T1 = (1,)
 T2 = (2,)
 T3 = (3,)
@@ -603,7 +605,7 @@ print(T2+T2)
 '''
 
 
-# 29. Which among the following can not be used as a variable name: - 
+# 29. Which among the following can not be used as a variable name: -
 # answer : 3Version
 
 
@@ -611,15 +613,17 @@ print(T2+T2)
 class Student:
     def __init__(self):
         self.name = "Olivia"
+
     def set_rollNo(self):
         self.rollNo = 45786
-        
-print(hasattr(Student(),'name')) # True
-print(hasattr(Student(),'rollNo')) # False
-print(hasattr(Student(),'set_rollNo')) # True
-print(hasattr(Student(),'Student')) # False
 
-# answer : 
+
+print(hasattr(Student(), 'name'))  # True
+print(hasattr(Student(), 'rollNo'))  # False
+print(hasattr(Student(), 'set_rollNo'))  # True
+print(hasattr(Student(), 'Student'))  # False
+
+# answer :
 # print(hasattr(Student(),'name')) # True
 # print(hasattr(Student(),'set_rollNo')) # True
 
@@ -666,27 +670,32 @@ mencoba memeriksa atribut rollNo pada kelas Student sebelum objek dari kelas ter
 # 31. Which among the following code after execution will print 'true'
 
 
-# 32. Which among the following code after execution will print 'False' . 
-class A : pass
-class B(A): pass
+# 32. Which among the following code after execution will print 'False' .
+class A:
+    pass
+
+
+class B(A):
+    pass
+
+
 obj = A()
-print(isinstance(obj,B))
+print(isinstance(obj, B))
 
 
-# 33. Choose the correct output of the following code: - 
+# 33. Choose the correct output of the following code: -
 try:
     a = 0
-    print(a = 4)
+    print(a=4)
 except:
     print("Error is raised in try")
 # answer : Error is raised in try
 
 
-
-# 34.  If the will 'sys.txt' already contain the next "Welcome" then what 
+# 34.  If the will 'sys.txt' already contain the next "Welcome" then what
 # will be the text present in the file after the execution of the following code: -
 
-file = open("sys.txt",'w')
+file = open("sys.txt", 'w')
 file.write("To Programming")
 file.close()
 # answer: To Programming
@@ -697,10 +706,10 @@ file.close()
 # 2st line (To Python)
 # 3st line (Programming)
 # Fill the blank, So that the below code will print text as it is written in the file.
-file = open('sys.txt','r')
+file = open('sys.txt', 'r')
 print(_______________)
 file.close()
-# # answer: 
+# # answer:
 # file.read()
 # file.read(-1)
 # file.read(-10)
@@ -714,65 +723,63 @@ mengontrol jumlah karakter yang dibaca dari file, di mana -1 akan membaca
 seluruh konten dan -10 akan membaca 10 karakter terakhir.
 '''
 
-# 36. Choose the correct output of the following code: - 
+# 36. Choose the correct output of the following code: -
+
+
 class Class_A():
     def info(self):
         print("Class_A")
+
+
 class Class_B(Class_A):
     pass
+
+
 obj = Class_B()
 obj.info()
 # answer: Class_A
 
 
-# 37. Fill the blank, so that after execution of the below code the code will print 'Please Rate This Course' . 
+# 37. Fill the blank, so that after execution of the below code the code will print 'Please Rate This Course' .
 class A():
     pass
+
+
 try:
     raise A()
-except :
+except:
     print("Please Rate This Course")
 except:
     print("Write Review for this Course")
 
-# answer: 
+# answer:
 # BaseException
 # Exception
 
 
-# 38. Choose the correc output of the following code: - 
+# 38. Choose the correc output of the following code: -
 class Student:
-    def __init__(self,m):
+    def __init__(self, m):
         self.__marks = m
         grace(self)
         print(self.__marks)
+
     def grace(self):
         self.__marks = self.__marks + 10
+
+
 Student(23)
 # answer : NameError: name 'grace' is not defined
 
 
-# 39. Choose the correct output of the following code: - 
-tp = (1,2)
+# 39. Choose the correct output of the following code: -
+tp = (1, 2)
 print(2*tp)
 # answer : (1, 2, 1, 2)
 
 
 # 40. Choose the correct output of the following code: -
-set1 = {1,2}
-set2 = {1,2}
-print(set1+set2) # Error
+set1 = {1, 2}
+set2 = {1, 2}
+print(set1+set2)  # Error
 # answer : TypeError: unsupported operand type(s) for +: 'set' and 'set'
-
-
-
-
-
-
-
-
-
-
-
-
-
