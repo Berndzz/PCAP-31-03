@@ -462,3 +462,121 @@ b = input("Enter second number: ")
 print(a+b)
 
 # answer: 2010
+
+# 21. Choose the correct output of the following code: - 
+x = 'Python Java'
+for i in x:
+    if(i==" "): print()
+    else: print(i,end="")
+# answer:
+# Python
+# Java
+
+# 22. Choose the correct output of the following code: - 
+for i in range(0,5):
+    for j in range(0,i+1):
+        print('* ', end="")
+    print(" ")
+# answer:
+# *  
+# * *  
+# * * *  
+# * * * *  
+# * * * * *
+
+
+# 23. Choose the correct output of the following code: - 
+a = Orange
+print(a)
+# answer:
+# NameError: name 'Orange' is not defined
+
+
+
+# 24. Choose the correct output of the following code: - 
+x = (9,5,1)
+x.append((7,5,3))
+length = len(x)
+print(length) # Error
+# answer:
+# AttributeError: 'tuple' object has no attribute 'append'
+
+
+
+# 25. Choose the correct output of the following code: - 
+try: 
+    print(1/0)
+except ZeroDivisionError:
+    print("Zero Division Error")
+except: 
+    print("Error is raised")
+else:
+    print("No Error is Raised")
+# answer:
+# Zero Division Error
+
+
+# 26. Fill the blank in the below code so that when its executed it will print 'true'
+class Employee:
+    company_name = 'Google'
+    def __init__(self):
+        self.name = 'Enma'
+
+print(hasattr(Employee(),'company_name')) # True
+print(hasattr(Employee,'company_name')) # True
+print(hasattr(Employee(),'name')) # True
+print(hasattr(Employee,'name')) # False
+print(hasattr(Employee,'salary')) # False
+
+# answer:
+# print(hasattr(Employee(),'company_name')) # True
+# print(hasattr(Employee,'company_name')) # True
+# print(hasattr(Employee(),'name')) # True
+
+'''
+breakdown
+Kode di atas mendefinisikan sebuah kelas Employee dengan beberapa atribut dan
+menggunakan fungsi hasattr() untuk memeriksa keberadaan atribut dalam kelas atau objek. 
+Mari kita bahas setiap baris dengan lebih detail:
+print(hasattr(Employee(),'company_name')): Pada baris ini, kita menggunakan hasattr()
+untuk memeriksa apakah objek yang dibuat dari kelas Employee memiliki atribut company_name. 
+Karena company_name adalah atribut kelas (bukan atribut instance), hasilnya adalah True.
+print(hasattr(Employee,'company_name')): Pada baris ini, kita menggunakan hasattr() untuk 
+memeriksa apakah kelas Employee sendiri memiliki atribut company_name. Karena company_name 
+adalah atribut kelas, hasilnya juga adalah True.
+print(hasattr(Employee(),'name')): Pada baris ini, kita menggunakan hasattr() untuk memeriksa 
+apakah objek yang dibuat dari kelas Employee memiliki atribut name. Karena dalam konstruktor 
+(__init__) objek Employee, atribut name diinisialisasi, hasilnya adalah True.
+print(hasattr(Employee,'name')): Pada baris ini, kita menggunakan hasattr() untuk memeriksa 
+apakah kelas Employee sendiri memiliki atribut name. Karena name adalah atribut instance (objek),
+bukan atribut kelas, maka hasilnya adalah False.
+print(hasattr(Employee,'salary')): Pada baris ini, kita menggunakan hasattr() untuk memeriksa apakah
+kelas Employee sendiri memiliki atribut salary. Karena tidak ada atribut dengan nama salary yang 
+didefinisikan dalam kelas Employee, hasilnya adalah False.
+Jadi, hasattr() digunakan untuk memeriksa keberadaan atribut dalam kelas atau objek, 
+dan hasilnya bergantung pada apakah atribut tersebut ada dalam konteks yang sesuai.
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
