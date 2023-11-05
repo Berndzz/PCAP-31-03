@@ -775,7 +775,7 @@ Student(23)
 # 39. Choose the correct output of the following code: -
 tp = (1, 2)
 print(2*tp)
-# answer : (1, 2, 1, 2)
+# answer : (1, 2, 1, 2)x
 
 
 # 40. Choose the correct output of the following code: -
