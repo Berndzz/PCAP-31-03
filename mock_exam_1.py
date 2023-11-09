@@ -5,7 +5,7 @@
 
 
 # 2. Choose the correct output of the following code:
-# list bisa berbagaai elemen yah
+# list bisa berbagai elemen yah
 import math
 
 list1 = [("abc", "bca"), 24.56, 23.64, [1, 2, 3]]
@@ -650,6 +650,7 @@ Setelah itu, kita menjumlahkan hasil pembulatan: 0 + 1 + 0, yang menghasilkan ni
 class Calculate:
     A = 20
     B = 20
+
 
     def __init__(self, a, b):
         A = a
