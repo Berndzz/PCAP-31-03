@@ -4,7 +4,7 @@ txt = "The rain in Spain"
 
 #Check if the string has any a, r, or n characters:
 
-x = re.findall("[arn]", txt)
+x = re.findall("[arni]", txt)
 
 print(x)
 
